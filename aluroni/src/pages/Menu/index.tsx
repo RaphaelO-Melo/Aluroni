@@ -6,6 +6,7 @@ export default function Menu(){
         <main>
             <nav className={styles.menu}>
                 <Logo/>
+                Aluroni
             </nav>
         </main>
     )

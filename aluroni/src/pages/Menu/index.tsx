@@ -7,6 +7,7 @@ import Filters from './Filters/intex';
 export default function Menu(){
 
     const [search, setSearch] = useState('');
+    const [filter, setFilter] = useState<number | null>(null);
 
     return (
         <main>
@@ -23,7 +24,7 @@ export default function Menu(){
                 <Searcher search={search} setSearch={setSearch} />
 
                 <div className={styles.sub_menu__filters}>
-                    <Filters/>
+                    <Filters filter={filter} setFilter={setFilter}/>
                 </div>
             </section>
         </main>

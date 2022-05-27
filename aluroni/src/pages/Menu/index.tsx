@@ -2,6 +2,7 @@ import styles from './Menu.module.scss';
 import {ReactComponent as Logo} from 'assets/logo.svg';
 import Searcher from './Searcher';
 import { useState } from 'react';
+import Filters from './Filters/intex';
 
 export default function Menu(){
 
@@ -20,6 +21,10 @@ export default function Menu(){
             <section className={styles.submenu}>
                 <h3 className={styles.submenu__title}>Cardápio</h3>
                 <Searcher search={search} setSearch={setSearch} />
+
+                <div className={styles.sub_menu__filters}>
+                    <Filters/>
+                </div>
             </section>
         </main>
     )

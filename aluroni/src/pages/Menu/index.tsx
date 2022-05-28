@@ -3,6 +3,7 @@ import {ReactComponent as Logo} from 'assets/logo.svg';
 import Searcher from './Searcher';
 import { useState } from 'react';
 import Filters from './Filters/intex';
+import Sorter from './Sorter';
 
 export default function Menu(){
 
@@ -24,7 +25,8 @@ export default function Menu(){
                 <Searcher search={search} setSearch={setSearch} />
 
                 <div className={styles.sub_menu__filters}>
-                    <Filters filter={filter} setFilter={setFilter}/>
+                    <Filters filter={filter} setFilter={setFilter} />
+                    <Sorter />
                 </div>
             </section>
         </main>

@@ -9,6 +9,7 @@ export default function Menu(){
 
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState<number | null>(null);
+    const [sorter, setSorter] = useState('');
 
     return (
         <main>
@@ -26,7 +27,7 @@ export default function Menu(){
 
                 <div className={styles.sub_menu__filters}>
                     <Filters filter={filter} setFilter={setFilter} />
-                    <Sorter />
+                    <Sorter sorter={sorter} setSorter={setSorter} />
                 </div>
             </section>
         </main>

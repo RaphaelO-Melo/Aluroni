@@ -12,16 +12,28 @@ interface Props {
 export default function Items(props : Props){
 
     const [list, setList] = useState(items);
-    const {search, filter } = props;
+    const {search, filter, sorter} = props;
 
     
     useEffect(() => {
 
         const newList = items.filter(item => testSearch(item.title) && testFilter(item.category.id));
-        setList(newList);
+        setList(sortList(newList));
 
-    }, [search, filter]);
+    }, [search, filter, sorter]);
     
+    function sortList(newList: typeof items){
+        switch(sorter){
+            case 'porcao':
+                return newList.sort((a, b) => a.size > b.size ? 1 : -1);
+            case 'qtd_pessoas':
+                return newList.sort((a, b) => a.serving > b.serving ? 1 : -1);
+            case 'preco':
+                return newList.sort((a, b) => a.price > b.price ? 1 : -1);
+            default:
+                return newList;
+        }
+    }
 
     function testSearch(title: string){
         const regex = new RegExp(search, 'i');

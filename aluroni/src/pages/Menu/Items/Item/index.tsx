@@ -27,7 +27,7 @@ export default function Item(props: Props){
                         {size}
                     </div>
                     <div className={style.item__ppamount}>
-                        Serve {serving} pessoa {serving > 1 ? 's':''}
+                        Serve {serving} pessoa{serving > 1 ? 's':''}
                     </div>
                     <div className={style.item__value}>
                         R$ {price.toFixed(2)}

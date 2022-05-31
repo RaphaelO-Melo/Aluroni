@@ -7,12 +7,12 @@ type Props = typeof items[0];
 
 export default function Item(props: Props){
 
-    const{title, description, category, size, serving, price} = props;
+    const{title, description, category, size, serving, price, photo} = props;
 
     return (
         <div className={style.item}>
             <div className={style.item__image}>
-                <img src={logo} alt={title}/>
+                <img src={photo} alt={title}/>
             </div>
             <div className={style.item__descryption}>
                 <div className={style.item__title}>
@@ -20,10 +20,7 @@ export default function Item(props: Props){
                     <p>{description}</p>
                 </div>
                 <div className={style.item__tags}>
-                    <div className={classNames({
-                        [style.item__type]: true,
-                        [style[`item__type__${category.label.toLowerCase()}`]]: true
-                    })}>
+                    <div className={classNames([style.item__type], [style[`item__type__${category.label.toLowerCase()}`]])}>
                         {category.label}
                     </div>
                     <div className={style.item__portion}>

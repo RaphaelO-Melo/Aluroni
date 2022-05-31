@@ -4,6 +4,7 @@ import Searcher from './Searcher';
 import { useState } from 'react';
 import Filters from './Filters/intex';
 import Sorter from './Sorter';
+import Items from './Items';
 
 export default function Menu(){
 
@@ -25,10 +26,11 @@ export default function Menu(){
                 <h3 className={styles.submenu__title}>Cardápio</h3>
                 <Searcher search={search} setSearch={setSearch} />
 
-                <div className={styles.sub_menu__filters}>
+                <div className={styles.submenu__filters}>
                     <Filters filter={filter} setFilter={setFilter} />
                     <Sorter sorter={sorter} setSorter={setSorter} />
                 </div>
+                <Items />
             </section>
         </main>
     )

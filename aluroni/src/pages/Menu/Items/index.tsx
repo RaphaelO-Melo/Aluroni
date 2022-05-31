@@ -7,7 +7,7 @@ export default function Items(){
         <div>
             {items.map(item => (
                 <div className={style.items}>
-                    <Item key={item.id}/>
+                    <Item key={item.id} {...item}/>
                 </div>
             ))}
         </div>

@@ -2,7 +2,7 @@ import styles from './Menu.module.scss';
 import {ReactComponent as Logo} from 'assets/logo.svg';
 import Searcher from './Searcher';
 import { useState } from 'react';
-import Filters from './Filters/intex';
+import Filters, { OrderOptions } from './Filters/intex';
 import Sorter from './Sorter';
 import Items from './Items';
 
@@ -10,7 +10,7 @@ export default function Menu(){
 
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState<number | null>(null);
-    const [sorter, setSorter] = useState('');
+    const [sorter, setSorter] = useState<OrderOptions>('');
 
     return (
         <main>

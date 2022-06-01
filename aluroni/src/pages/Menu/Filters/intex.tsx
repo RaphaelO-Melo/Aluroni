@@ -3,6 +3,7 @@ import filters from './filters.json';
 import style from './Filters.module.scss';
 import classNames from 'classnames';
 
+export type OrderOptions = '' | 'porcao' | 'qtd_pessoas' | 'preco';
 type IOption = typeof filters[0];
 
 interface Props{

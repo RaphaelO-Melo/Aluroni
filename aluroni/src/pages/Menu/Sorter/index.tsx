@@ -4,10 +4,11 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import {MdKeyboardArrowUp} from 'react-icons/md';
 import {MdKeyboardArrowDown} from 'react-icons/md';
+import { OrderOptions } from '../Filters/intex';
 
 interface Props {
-    sorter: string,
-    setSorter: React.Dispatch<React.SetStateAction<string>>
+    sorter: OrderOptions,
+    setSorter: React.Dispatch<React.SetStateAction<OrderOptions>>
 }
 
 export default function Sorter({sorter, setSorter} : Props){
@@ -37,7 +38,7 @@ export default function Sorter({sorter, setSorter} : Props){
                     <div 
                         className={style.sorter__option} 
                         key={option.value}
-                        onClick={() => setSorter(option.value)}
+                        onClick={() => setSorter(option.value as OrderOptions)}
                     >
                         {option.name}
                     </div>

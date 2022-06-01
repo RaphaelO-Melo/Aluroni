@@ -1,6 +1,7 @@
 @import "styles/variables";
 
 .counter{
+    display: none;
     background-color: $red;
     color: $light-grey;
     border: none;
@@ -8,4 +9,10 @@
     font-weight: bold;
     outline: none;
     padding: 5px 20px;
+    margin-bottom: 15px;
+    float: right;
+}
+
+.counter--active{
+    display: block;
 }

@@ -2,6 +2,7 @@ import items from './items.json';
 import Item from './Item';
 import style from './Items.module.scss';
 import { useEffect, useState } from 'react';
+import Counter from './Counter';
 
 interface Props {
     search: string,
@@ -52,6 +53,7 @@ export default function Items(props : Props){
 
     return (
         <div>
+            <Counter list={list} search={search} filter={filter} />
             {list.map(item => (
                 <div className={style.items}>
                     <Item key={item.id} {...item}/>

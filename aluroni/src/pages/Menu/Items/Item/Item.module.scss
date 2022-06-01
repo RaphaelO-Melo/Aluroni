@@ -12,6 +12,7 @@ $veganos: #80aa40;
   width: 90%;
   &__image {
     min-width: 240px;
+    margin-right: 5px;
     @media (max-width: $desktop_xsm) {
       width: 100%;
     }

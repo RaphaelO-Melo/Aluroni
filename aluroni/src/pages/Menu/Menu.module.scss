@@ -60,4 +60,9 @@
     font-size: 3rem;
     margin-bottom: 30px;
   }
+  &__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  }
 }

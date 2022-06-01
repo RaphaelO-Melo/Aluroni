@@ -40,6 +40,11 @@
 }
 
 .submenu {
+  &__filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   padding: 50px $padding-horizontal;
   @media (max-width: $desktop_xsm) {
     padding: 50px $padding-horizontal-mobile;

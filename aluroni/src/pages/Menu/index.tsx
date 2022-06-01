@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Filters, { OrderOptions } from './Filters/intex';
 import Sorter from './Sorter';
 import Items from './Items';
+import Counter from './Counter';
 
 export default function Menu(){
 
@@ -24,7 +25,11 @@ export default function Menu(){
 
             <section className={styles.submenu}>
                 <h3 className={styles.submenu__title}>Cardápio</h3>
-                <Searcher search={search} setSearch={setSearch} />
+
+                <div className={styles.submenu__top}>
+                    <Searcher search={search} setSearch={setSearch} />
+                    <Counter />
+                </div>
 
                 <div className={styles.submenu__filters}>
                     <Filters filter={filter} setFilter={setFilter} />

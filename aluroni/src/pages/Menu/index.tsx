@@ -5,7 +5,6 @@ import { useState } from 'react';
 import Filters, { OrderOptions } from './Filters/intex';
 import Sorter from './Sorter';
 import Items from './Items';
-import Counter from './Items/Counter';
 
 export default function Menu(){
 
@@ -34,5 +33,5 @@ export default function Menu(){
                 <Items search={search} filter={filter} sorter={sorter} />
             </section>
         </main>
-    )
+    );
 }

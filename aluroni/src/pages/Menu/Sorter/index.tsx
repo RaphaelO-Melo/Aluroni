@@ -26,7 +26,7 @@ export default function Sorter({sorter, setSorter} : Props){
             onBlur={() => setOpen(false)}
         >
 
-            <span>{sorterName || "Ordenar por"}</span>
+            <span>{sorterName || 'Ordenar por'}</span>
 
             {open ? <MdKeyboardArrowUp size={20}/> : <MdKeyboardArrowDown size={20}/>}
 
@@ -45,5 +45,5 @@ export default function Sorter({sorter, setSorter} : Props){
                 ))}
             </div>
         </button>
-    )
+    );
 }

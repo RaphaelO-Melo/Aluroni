@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react';
 import styles from './Searcher.module.scss';
 import {CgSearch} from 'react-icons/cg';
 import {TiDeleteOutline} from 'react-icons/ti';
@@ -33,5 +33,5 @@ export default function Searcher(props: Props){
             {focusing ? <TiDeleteOutline size={20} color='#4C4D5E' onClick={() => resetSearch()}/> : <CgSearch size={20} color='#4C4D5E'/>}
             
         </div>
-    )
+    );
 }

@@ -25,14 +25,14 @@ export default function Items(props : Props){
     
     function sortList(newList: typeof items){
         switch(sorter){
-            case 'porcao':
-                return newList.sort((a, b) => a.size > b.size ? 1 : -1);
-            case 'qtd_pessoas':
-                return newList.sort((a, b) => a.serving > b.serving ? 1 : -1);
-            case 'preco':
-                return newList.sort((a, b) => a.price > b.price ? 1 : -1);
-            default:
-                return newList;
+        case 'porcao':
+            return newList.sort((a, b) => a.size > b.size ? 1 : -1);
+        case 'qtd_pessoas':
+            return newList.sort((a, b) => a.serving > b.serving ? 1 : -1);
+        case 'preco':
+            return newList.sort((a, b) => a.price > b.price ? 1 : -1);
+        default:
+            return newList;
         }
     }
 
@@ -55,10 +55,10 @@ export default function Items(props : Props){
         <div>
             <Counter list={list} search={search} filter={filter} />
             {list.map(item => (
-                <div className={style.items}>
+                <div key={item.id} className={style.items}>
                     <Item key={item.id} {...item}/>
                 </div>
             ))}
         </div>
-    )
+    );
 }

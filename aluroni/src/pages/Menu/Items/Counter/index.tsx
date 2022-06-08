@@ -16,5 +16,5 @@ export default function Counter({list, search, filter} : Props){
         })}>
             Produtos encontrados: {Object.keys(list).length}
         </div>
-    )
+    );
 }

@@ -1,4 +1,3 @@
-import logo from 'assets/logo.svg';
 import style from './Item.module.scss';
 import items from '../items.json';
 import classNames from 'classnames';
@@ -35,5 +34,5 @@ export default function Item(props: Props){
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -1,4 +1,4 @@
-import items from './items.json';
+import items from 'data/menu.json';
 import Item from './Item';
 import style from './Items.module.scss';
 import { useEffect, useState } from 'react';

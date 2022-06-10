@@ -12,21 +12,14 @@ export default function Menu(){
     const [sorter, setSorter] = useState<OrderOptions>('');
 
     return (
-        <main>
-            <header className={styles.header}>
-                <div className={styles.header__text}>A casa do código e da massa</div>
-            </header>
-
-            <section className={styles.submenu}>
-                <h3 className={styles.submenu__title}>Cardápio</h3>
-                <Searcher search={search} setSearch={setSearch} />
-
-                <div className={styles.submenu__filters}>
-                    <Filters filter={filter} setFilter={setFilter} />
-                    <Sorter sorter={sorter} setSorter={setSorter} />
-                </div>
-                <Items search={search} filter={filter} sorter={sorter} />
-            </section>
-        </main>
+        <section className={styles.submenu}>
+            <h3 className={styles.submenu__title}>Cardápio</h3>
+            <Searcher search={search} setSearch={setSearch} />
+            <div className={styles.submenu__filters}>
+                <Filters filter={filter} setFilter={setFilter} />
+                <Sorter sorter={sorter} setSorter={setSorter} />
+            </div>
+            <Items search={search} filter={filter} sorter={sorter} />
+        </section>
     );
 }

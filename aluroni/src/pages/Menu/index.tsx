@@ -1,4 +1,5 @@
 import styles from './Menu.module.scss';
+import styleTheme from 'styles/theme.module.scss';
 import Searcher from './Searcher';
 import { useState } from 'react';
 import Filters, { OrderOptions } from './Filters/intex';
@@ -13,7 +14,7 @@ export default function Menu(){
 
     return (
         <section className={styles.submenu}>
-            <h3 className={styles.submenu__title}>Cardápio</h3>
+            <h3 className={styleTheme.title}>Cardápio</h3>
             <Searcher search={search} setSearch={setSearch} />
             <div className={styles.submenu__filters}>
                 <Filters filter={filter} setFilter={setFilter} />

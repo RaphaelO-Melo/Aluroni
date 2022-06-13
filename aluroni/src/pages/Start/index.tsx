@@ -1,6 +1,7 @@
 import menu from 'data/menu.json';
 import style from './Start.module.scss';
 import styleTheme from 'styles/theme.module.scss';
+import ourHome from 'assets/nossa_casa.png';
 
 export default function Start() {
 
@@ -23,6 +24,13 @@ export default function Start() {
                         </button>
                     </div>
                 ))}
+            </div>
+            <h3 className={styleTheme.title}>Nossa casa</h3>
+            <div className={style.ourHome}>
+                <img src={ourHome} alt="Casa do aluroni"/>
+                <div className={style.ourHome__address}>
+                    Rua Vergueiro, 3185 <br /> <br /> Vila Mariana - SP
+                </div>
             </div>
         </section>
     );

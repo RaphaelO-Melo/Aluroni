@@ -2,11 +2,17 @@ import menu from 'data/menu.json';
 import style from './Start.module.scss';
 import styleTheme from 'styles/theme.module.scss';
 import ourHome from 'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Start() {
 
+    const navigate = useNavigate();
     let suggestions = [...menu];
     suggestions = suggestions.sort(() => 0.5 - Math.random()).splice(0, 3);
+
+    function openPlate(plate: typeof menu[0]){
+        navigate(`/prato/${plate.id}`, { state: {plate}});
+    }
 
     return (
         <section>
@@ -19,7 +25,11 @@ export default function Start() {
                         <div className={style.suggestion__image}>
                             <img src={item.photo} alt={item.title} />
                         </div>
-                        <button className={style.suggestion__button}>
+                        <button
+                            className={style.suggestion__button}
+                            onClick={() => openPlate(item)}
+                        >
+                            
                             Ver mais
                         </button>
                     </div>

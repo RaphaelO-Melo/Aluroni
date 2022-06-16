@@ -1,16 +1,15 @@
-import logo from 'assets/logo.svg';
 import style from './Item.module.scss';
-import items from '../items.json';
-import classNames from 'classnames';
+import { Plate } from 'types/Plate';
+import TagsPlate from 'components/TagsPlate/item';
+import { useNavigate } from 'react-router-dom';
 
-type Props = typeof items[0];
+export default function Item(props: Plate){
 
-export default function Item(props: Props){
-
-    const{title, description, category, size, serving, price, photo} = props;
+    const{id, title, description, photo} = props;
+    const navigate = useNavigate();
 
     return (
-        <div className={style.item}>
+        <div className={style.item} onClick={() => navigate(`/prato/${id}`)}>
             <div className={style.item__image}>
                 <img src={photo} alt={title}/>
             </div>
@@ -19,21 +18,8 @@ export default function Item(props: Props){
                     <h2>{title}</h2>
                     <p>{description}</p>
                 </div>
-                <div className={style.item__tags}>
-                    <div className={classNames([style.item__type], [style[`item__type__${category.label.toLowerCase()}`]])}>
-                        {category.label}
-                    </div>
-                    <div className={style.item__portion}>
-                        {size}
-                    </div>
-                    <div className={style.item__ppamount}>
-                        Serve {serving} pessoa{serving > 1 ? 's':''}
-                    </div>
-                    <div className={style.item__value}>
-                        R$ {price.toFixed(2)}
-                    </div>
-                </div>
+                <TagsPlate {...props}/>
             </div>
         </div>
-    )
+    );
 }

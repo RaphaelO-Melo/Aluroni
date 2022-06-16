@@ -1,5 +1,5 @@
 import style from './Counter.module.scss';
-import items from '../items.json';
+import items from 'data/menu.json';
 import classNames from 'classnames';
 
 interface Props{
@@ -16,5 +16,5 @@ export default function Counter({list, search, filter} : Props){
         })}>
             Produtos encontrados: {Object.keys(list).length}
         </div>
-    )
+    );
 }

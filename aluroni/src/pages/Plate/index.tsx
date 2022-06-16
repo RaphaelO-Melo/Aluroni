@@ -1,16 +1,20 @@
 import style from './Plate.module.scss';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 import menu from 'data/menu.json';
 
 export default function Plate(){
     
-    const {state} = useLocation();
-    const {plate} = state as { plate: typeof menu[0]};
+    const navigate = useNavigate();
+    const {id} = useParams();
+    const plate = menu.find(item => item.id === Number(id));
+    if(!plate){
+        return '';
+    }
 
     return (
         <>
-            <button className={style.back}>
+            <button className={style.back} onClick={() => navigate(-1)}>
                 {'< Voltar'}
             </button>
             <section className={style.container}>

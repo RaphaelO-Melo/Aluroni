@@ -3,6 +3,7 @@ import style from './Start.module.scss';
 import styleTheme from 'styles/theme.module.scss';
 import ourHome from 'assets/nossa_casa.png';
 import { useNavigate } from 'react-router-dom';
+import { Plate } from 'types/Plate';
 
 export default function Start() {
 
@@ -10,7 +11,7 @@ export default function Start() {
     let suggestions = [...menu];
     suggestions = suggestions.sort(() => 0.5 - Math.random()).splice(0, 3);
 
-    function openPlate(plate: typeof menu[0]){
+    function openPlate(plate: Plate){
         navigate(`/prato/${plate.id}`, { state: {plate}});
     }
 

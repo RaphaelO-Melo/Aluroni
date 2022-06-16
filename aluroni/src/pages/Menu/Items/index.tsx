@@ -3,6 +3,7 @@ import Item from './Item';
 import style from './Items.module.scss';
 import { useEffect, useState } from 'react';
 import Counter from './Counter';
+import { Menu } from 'types/Plate';
 
 interface Props {
     search: string,
@@ -23,7 +24,7 @@ export default function Items(props : Props){
 
     }, [search, filter, sorter]);
     
-    function sortList(newList: typeof items){
+    function sortList(newList: Menu){
         switch(sorter){
         case 'porcao':
             return newList.sort((a, b) => a.size > b.size ? 1 : -1);

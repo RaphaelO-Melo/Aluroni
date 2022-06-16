@@ -2,14 +2,16 @@ import style from './Plate.module.scss';
 import { useNavigate, useParams } from 'react-router-dom';
 import menu from 'data/menu.json';
 import TagsPlate from 'components/TagsPlate/item';
+import NotFound from 'pages/NotFound';
 
 export default function Plate(){
     
     const navigate = useNavigate();
     const {id} = useParams();
     const plate = menu.find(item => item.id === Number(id));
+
     if(!plate){
-        return '';
+        return <NotFound />;
     }
 
     return (
